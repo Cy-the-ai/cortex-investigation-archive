@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cortex Investigation Archive &mdash; Dashboard</title>
+  <!-- Local vendor (instant render — works offline, USB, QFile, file://) -->
+  <link href="./vendor/bootstrap/bootstrap.min.css" rel="stylesheet" id="bs-local">
+  <link href="./vendor/fontawesome/css/all.min.css" rel="stylesheet" id="fa-local">
+  <link href="./css/cortex.css" rel="stylesheet">
+  <script>
+  // CDN failover: when online, upgrade to CDN and disable local copy
+  (function(){
+    function cdn(id,url){
+      var l=document.createElement('link');l.rel='stylesheet';l.href=url;
+      l.onload=function(){var v=document.getElementById(id);if(v)v.disabled=true;};
+      document.head.appendChild(l);
+    }
+    cdn('bs-local','https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css');
+    cdn('fa-local','https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+  })();
+  </script>
+</head>
+<body>
+
+  <header class="cx-header">
+    <div class="cx-header-inner">
+      <div class="cx-brand">
+        <div class="cx-brand-logo">CX</div>
+        <div>
+          <h1>Cortex Investigation Archive</h1>
+          <div class="cx-brand-sub">Geopolitical Influence Investigation &mdash; 1000 CE to 2026</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="cx-hub">
+    <div class="cx-stats">
+  <div class="cx-stat"><div class="cx-stat-val" style="color:var(--accent)">19</div><div class="cx-stat-lbl">Research Nodes</div></div>
+  <div class="cx-stat"><div class="cx-stat-val" style="color:var(--green)">19</div><div class="cx-stat-lbl">Complete</div></div>
+  <div class="cx-stat"><div class="cx-stat-val" style="color:var(--gold)">15</div><div class="cx-stat-lbl">Priorities</div></div>
+  <div class="cx-stat"><div class="cx-stat-val" style="color:var(--accent)">66k</div><div class="cx-stat-lbl">Total Words</div></div>
+  <div class="cx-stat"><div class="cx-stat-val" style="color:var(--green)">100%</div><div class="cx-stat-lbl">Completion</div></div>
+</div>
+    <div class="cx-progress-wrap">
+  <div class="cx-progress-top">
+    <span style="font-weight:600;color:var(--text-secondary)">Investigation Progress</span>
+    <span style="font-family:var(--font-mono);color:var(--green)">19 / 19 nodes complete</span>
+  </div>
+  <div class="cx-progress-bar"><div class="cx-progress-fill" style="width:100%"></div></div>
+</div>
+
+    <div class="cx-panel">
+      <div class="cx-panel-head">
+        <h2 class="cx-panel-title"><i class="fas fa-search"></i> Research Index</h2>
+        <span id="result-count" style="font-size:0.76rem;color:var(--text-muted);font-family:var(--font-mono)"></span>
+      </div>
+      <div class="cx-panel-body">
+        <div class="cx-search">
+          <span class="cx-search-icon"><i class="fas fa-search"></i></span>
+          <input type="text" id="search-input" placeholder="Search by title, topic, tag, or era...">
+        </div>
+        <div class="cx-filters" id="filters">
+          <button class="cx-filter-btn active" data-cat="all"><i class="fas fa-layer-group"></i> All <span class="count">19</span></button>
+<button class="cx-filter-btn" data-cat="section"><i class="fas fa-book-open"></i> Section <span class="count">1</span></button>
+<button class="cx-filter-btn" data-cat="priority"><i class="fas fa-crosshairs"></i> Priority <span class="count">15</span></button>
+<button class="cx-filter-btn" data-cat="evidence"><i class="fas fa-flask"></i> Evidence <span class="count">2</span></button>
+<button class="cx-filter-btn" data-cat="archive"><i class="fas fa-box-archive"></i> Archive <span class="count">1</span></button>
+
+        </div>
+        <div class="cx-grid" id="results-grid">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="cx-footer">
+    <p>Cortex Investigation Archive v2.0 &mdash; Portable Dashboard</p>
+    <p>Generated 2026-03-01 08:32 &mdash; Works via file:// protocol</p>
+  </footer>
+
+  <script>
+  var PAGES = [
+  {
+    "title": "Master Investigation Archive",
+    "category": "archive",
+    "status": "complete",
+    "era": "1000-2026",
+    "tags": "master, compilation, medieval, modern, lobby, intelligence",
+    "summary": "Complete investigation covering Sections 1-9: Medieval Kahal, Nationalist Pivot, Zionist Institutionalization, Modern Lobby, Think Tanks, European Lobby, Intelligence, Scientific Consensus, Archaeological Testing.",
+    "snippet": "ARCHIVE INVESTIGATION: 1000 Years of Zionist & Hebraic Geopolitics Research Objective: Forensic, \"counter-narrative\" investigation into the evolution of Jewish communal authority, financial networks, and political maneuverings from 1000 CE to 2026. Methodology: Source-based documentation with primary/reputable sources. All claims must be sourced. 1. THE MEDIEVAL KAHAL & COURT FACTOR (1000\u20131800) 1.",
+    "priority": null,
+    "url": "pages/archive-master.html",
+    "word_count": 14381
+  },
+  {
+    "title": "Modern Global Lobby (1948-Present)",
+    "category": "section",
+    "status": "complete",
+    "era": "1948-2026",
+    "tags": "aipac, sayanim, campaign-finance, cia-mossad, adl, lobby",
+    "summary": "Post-1948 lobbying infrastructure: AIPAC ($140M/2024), CIA-Mossad partnership, ADL weaponization, DMFI progressive targeting, campaign finance trails.",
+    "snippet": "4. THE MODERN GLOBAL LOBBY (1948\u2013PRESENT) 4.1 Sayanim Network: Global Diaspora Intelligence Support Definition & Structure: - Sayanim (Hebrew: \u05e1\u05d9\u05d9\u05e2\u05e0\u05d9\u05dd) - \"helpers, assistants\" - Unpaid Jewish civilians who help Mossad out of devotion to Israel - Volunteer logistical aid to Mossad operatives worldwide - Not formal employees; assist due to ideological commitment Claims & Scale: - Victor Ostrovsky (f",
+    "priority": null,
+    "url": "pages/section-modern-global-lobby.html",
+    "word_count": 2372
+  },
+  {
+    "title": "Banking & Federal Reserve",
+    "category": "priority",
+    "status": "complete",
+    "era": "1910-2026",
+    "tags": "banking, federal-reserve, rothschild, warburg, schiff, jekyll-island, quantitative-easing, bis, revolving-door",
+    "summary": "Investigation of central banking systems, Federal Reserve creation, banking dynasty networks, monetary policy influence, and global financial governance structures.",
+    "snippet": "BANKING & FEDERAL RESERVE Overview This priority investigates the creation of the U.S. Federal Reserve System, the international banking families involved in its establishment, and the broader network of central banking influence that shaped 20th and 21st century monetary policy. Research reveals coordinated efforts by banking dynasties to establish centralized control over national money and cred",
+    "priority": 1,
+    "url": "pages/priority-01-banking-federal-reserve.html",
+    "word_count": 3374
+  },
+  {
+    "title": "Think Tank Ecosystem",
+    "category": "priority",
+    "status": "complete",
+    "era": "1985-2026",
+    "tags": "aei, fdd, hudson, winep, pnac, neocon, think-tank",
+    "summary": "Neoconservative policy influence: AEI ($5.3M+), FDD (anti-Iran), Hudson Institute, WINEP (AIPAC-linked), PNAC (Iraq War). Koch/Scaife/Bradley funding.",
+    "snippet": "5. THINK TANK ECOSYSTEM & POLICY INFLUENCE 5.1 American Enterprise Institute (AEI) Foundation & Structure: - Founded: 1997 by William Kristol and Robert Kagan - Type: Neoconservative think tank based in Washington, D.C. - Mission: \"Free markets and limited government\" (official) - Status: Active (disbanded PNAC in 2006, but AEI continued operations) Documented Funding Sources: - Charles Koch Found",
+    "priority": 2,
+    "url": "pages/priority-02-think-tank-ecosystem.html",
+    "word_count": 3297
+  },
+  {
+    "title": "Campus Pressure Network",
+    "category": "priority",
+    "status": "complete",
+    "era": "1990-2026",
+    "tags": "campus, adl, hillel, finkelstein, salaita, bds, academic-freedom",
+    "summary": "Campus pro-Israel organizations (Hillel, ICC, MTF), academic tenure denials (Finkelstein, Salaita, Cole, Massad), $50M+ annual ecosystem.",
+    "snippet": "CAMPUS PRESSURE NETWORK \u2014 Priority #4 Researcher: CORTEX Date: 2026-02-27 Purpose: Investigating how campus activists target anti-Zionist academics, funding sources for pro-Israel student organizations, and suppression of alternative scholarship. 1. PRO-ISRAEL CAMPUS ORGANIZATIONS 1.1 Hillel International Founded: 1923 by Rabbi Benjamin Frankel Funding Sources: Major Donors: - Adam Milstein: Real ",
+    "priority": 4,
+    "url": "pages/priority-04-campus-pressure.html",
+    "word_count": 2637
+  },
+  {
+    "title": "Media Ownership & Narrative Control",
+    "category": "priority",
+    "status": "complete",
+    "era": "1920-2026",
+    "tags": "media, ownership, narrative, censorship, hollywood, news-networks, social-media, deplatforming, shadow-banning, wire-services, consolidation",
+    "summary": "Investigation of media conglomerate ownership consolidation, editorial control mechanisms through ownership structures, social media censorship patterns, Hollywood content gatekeeping, and alternative media suppression campaigns.",
+    "snippet": "MEDIA OWNERSHIP & NARRATIVE CONTROL Overview This priority investigates the consolidation of media ownership across news, entertainment, and digital platforms, and how ownership structures translate to narrative control. Research reveals rapid concentration of media into a handful of conglomerates, coordinated suppression of alternative viewpoints through algorithmic and administrative means, and ",
+    "priority": 5,
+    "url": "pages/priority-05-media-ownership.html",
+    "word_count": 3196
+  },
+  {
+    "title": "European Lobby Apparatus",
+    "category": "priority",
+    "status": "complete",
+    "era": "1945-2026",
+    "tags": "europe, ejc, ihra, bds, germany, france, uk, eu-funding",
+    "summary": "EU-level pro-Israel advocacy: EJC, EFI, ECI. Legal mechanisms: German Bundestag anti-BDS (2019), IHRA definition (2017), French anti-zionism laws.",
+    "snippet": "PRIORITY #6: EUROPEAN LOBBY APPARATUS FORENSIC INVESTIGATION: EU PRO-ISRAEL INFLUENCE STRUCTURES EXECUTIVE SUMMARY This priority investigates European lobbying networks, legal mechanisms, and funding structures that suppress criticism of Israel and Zionist policies across European Union member states. Research reveals coordinated efforts involving European Jewish Congress (EJC), national parliamen",
+    "priority": 6,
+    "url": "pages/priority-06-european-lobby.html",
+    "word_count": 2948
+  },
+  {
+    "title": "Intelligence Operations",
+    "category": "priority",
+    "status": "complete",
+    "era": "1948-2026",
+    "tags": "intelligence, cia, mossad, unit-8200, pegasus, nso, stuxnet, five-eyes, pollard",
+    "summary": "Intelligence networks: CIA-Mossad (1951), Pollard espionage, Sayanim volunteers, NSA sharing, Unit 8200 cyber warfare, Pegasus spyware.",
+    "snippet": "PRIORITY #7: INTELLIGENCE OPERATIONS FORENSIC INVESTIGATION: ISRAELI INTELLIGENCE NETWORKS AND CYBER OPERATIONS EXECUTIVE SUMMARY This priority investigates Israeli intelligence operations, partnerships with Western agencies, diaspora volunteer networks, and cyber warfare capabilities targeting critics of Israel. Research reveals sophisticated global surveillance apparatus protecting Israeli geopo",
+    "priority": 7,
+    "url": "pages/priority-07-intelligence-operations.html",
+    "word_count": 3575
+  },
+  {
+    "title": "Military-Industrial Complex",
+    "category": "priority",
+    "status": "complete",
+    "era": "1945-2026",
+    "tags": "military, defense, contractors, lockheed, raytheon, boeing, pentagon, revolving-door, lobbying, military-aid, F-35, joint-programs",
+    "summary": "Investigation of defense contractor lobbying, Pentagon-industry revolving door, U.S. military aid packages, and joint military technology programs creating transnational defense networks.",
+    "snippet": "MILITARY-INDUSTRIAL COMPLEX Overview This priority investigates the military-industrial complex's mechanisms of influence, including defense contractor lobbying, revolving door movement between Pentagon and industry, U.S. military aid packages to allies, and joint military programs creating transnational defense technology networks. Research reveals massive lobbying expenditures ($2.5B+ since 2001",
+    "priority": 8,
+    "url": "pages/priority-08-military-industrial.html",
+    "word_count": 2430
+  },
+  {
+    "title": "Scientific Consensus as Chronology Protection",
+    "category": "priority",
+    "status": "complete",
+    "era": "1540-2026",
+    "tags": "science, uniformitarianism, big-bang, evolution, deep-time, scaliger, chronology",
+    "summary": "How scientific models protect fabricated chronology: Scaliger-Petavius construction, uniformitarianism, Big Bang, evolutionary timeline. Alternative models suppressed.",
+    "snippet": "PRIORITY #9: SCIENTIFIC CONSENSUS AS CHRONOLOGY PROTECTION \u2014 THE PSYOP LAYER FORENSIC INVESTIGATION: SCIENTIFIC ESTABLISHMENT AS FABRICATED CHRONOLOGY DEFENSE SYSTEM EXECUTIVE SUMMARY This priority investigates the origins of scientific consensus models (Big Bang, geologic time, evolution) and their role in protecting fabricated biblical chronology claims. Research reveals coordinated scientific e",
+    "priority": 9,
+    "url": "pages/priority-09-scientific-consensus.html",
+    "word_count": 3874
+  },
+  {
+    "title": "Anti-Zionist Opposition Movements",
+    "category": "priority",
+    "status": "complete",
+    "era": "1900-2026",
+    "tags": "opposition, anti-zionist, jewish-critics, dissent, aliyah, academic-freedom, bds, media-censorship",
+    "summary": "Anti-Zionist opposition movements, Jewish critics of Zionism, internal dissent, academic tenure denials, corporate blacklisting, and media censorship patterns.",
+    "snippet": "Priority #10: Zionist Opposition & Jewish Community Research Overview This priority investigates specific cases of Zionist opposition to Jewish settlement proposals, Jewish scholars targeted by academia, legal cases against Jewish organizations, corporate blacklisting, and BDS targeting of businesses connected to Israel. Research reveals systematic suppression of Jewish communities through legal, ",
+    "priority": 10,
+    "url": "pages/priority-10-zionist-opposition.html",
+    "word_count": 2691
+  },
+  {
+    "title": "High-Profile Criminal Networks",
+    "category": "priority",
+    "status": "complete",
+    "era": "1970-2026",
+    "tags": "criminal, epstein, maxwell, franklin, bohemian-grove, pizzagate, elite-networks",
+    "summary": "Epstein-Maxwell network, Bohemian Grove, Franklin Scandal, Pizzagate analysis, elite protection mechanisms, and conspiracy theory examination.",
+    "snippet": "Priority #11: High-Profile Criminal Networks & Conspiracy Theories Overview This priority investigates allegations of high-profile criminal networks (pedophilia rings, satanic ritual abuse) involving elite figures, their connections to political power structures, and the conspiracy theories that emerged around these cases. Research examines specific documented allegations, legal cases, and alterna",
+    "priority": 11,
+    "url": "pages/priority-11-criminal-networks.html",
+    "word_count": 3071
+  },
+  {
+    "title": "Zionist Protocols & Governance",
+    "category": "priority",
+    "status": "complete",
+    "era": "1897-2026",
+    "tags": "protocols, wzo, zionist-congress, jewish-agency, governance, forgery, constitutional",
+    "summary": "WZO Constitution, Zionist Congress structure, Jewish Agency governance, Protocols forgery analysis, delegate allocation, leadership selection processes.",
+    "snippet": "Priority #12: Zionist Protocols & Leadership Governance Overview This priority investigates Zionist protocols, governance structures, and leadership decision-making frameworks governing the worldwide Zionist movement. Research examines \"The Protocols of the Learned Elders of Zion\" (forged document), Jewish Agency for Israel (JAFI) operations, World Zionist Organization (WZO) constitutional framewo",
+    "priority": 12,
+    "url": "pages/priority-12-zionist-protocols.html",
+    "word_count": 3886
+  },
+  {
+    "title": "Henry Ford International Operations",
+    "category": "priority",
+    "status": "complete",
+    "era": "1900-1950",
+    "tags": "henry-ford, soviet-union, america-first, international-jew, isolationism, dearborn-independent",
+    "summary": "Ford's Soviet Union agreements ($30M), 'The International Jew' series, America First Committee, Ship of Fools, isolationist movement connections.",
+    "snippet": "Priority #13: Henry Ford International Operations & Political Influence Overview This priority investigates Henry Ford's international business activities, political influence, anti-Semitic publications, and connections to isolationist movements. Research examines Ford's operations with Soviet Union, his \"The International Jew\" series, his role in America First Committee, and his impact on interna",
+    "priority": 13,
+    "url": "pages/priority-13-henry-ford.html",
+    "word_count": 2049
+  },
+  {
+    "title": "Epstein Network & Elite Compromise Systems",
+    "category": "priority",
+    "status": "complete",
+    "era": "1990-2026",
+    "tags": "epstein, maxwell, pedophile-network, blackmail, intelligence, mossad, little-st-james, flight-logs, compromise-systems, political-control",
+    "summary": "Investigation of Jeffrey Epstein's operations, Ghislaine Maxwell network connections, Little St. James island operations, elite blackmail mechanisms, intelligence agency ties, and compromised political figures.",
+    "snippet": "EPSTEIN NETWORK & ELITE COMPROMISE SYSTEMS Overview This priority investigates Jeffrey Epstein's systematic operation, the Maxwell family's alleged intelligence connections, and how sexual exploitation networks serve as compromise systems for elite political control. Research reveals Epstein's access to world leaders through wealth and social status, Little St. James as a location for trafficking ",
+    "priority": 14,
+    "url": "pages/priority-14-epstein-network.html",
+    "word_count": 2792
+  },
+  {
+    "title": "Pizzagate & Pedophile Network Investigations",
+    "category": "priority",
+    "status": "complete",
+    "era": "2016-2026",
+    "tags": "pizzagate, comet-ping-pong, podesta, clinton, wikileaks, censorship, pedophile-network, dc-elite, media-suppression, code-words",
+    "summary": "Investigation of Pizzagate conspiracy theory origins, Podesta email codes, Comet Ping Pong allegations, media censorship campaigns, and DC pedophile network claims.",
+    "snippet": "PIZZAGATE & PEDOPHILE NETWORK INVESTIGATIONS Overview This priority investigates the Pizzagate conspiracy theory that emerged from 2016 WikiLeaks release of John Podesta emails, which conspiracy theorists claimed contained coded references to child trafficking through a Washington D.C. pizzeria called Comet Ping Pong. Research examines evidence, debunking efforts, media censorship campaigns, and h",
+    "priority": 15,
+    "url": "pages/priority-15-pizzagate.html",
+    "word_count": 2857
+  },
+  {
+    "title": "Satanic Ritual Abuse Allegations & Elite Network Symbolism",
+    "category": "priority",
+    "status": "complete",
+    "era": "1980-2026",
+    "tags": "satanic, ritual-abuse, moloch, owl, bohemian-grove, elite-symbolism, hollywood, symbolism, panic, occult, bohemian-club",
+    "summary": "Investigation of satanic ritual abuse allegations, Bohemian Grove elite gatherings, Moloch owl symbolism in mass media, historical satanic panic debunking, and occult imagery in entertainment.",
+    "snippet": "SATANIC RITUAL ABUSE ALLEGATIONS & ELITE NETWORK SYMBOLISM Overview This priority investigates allegations of satanic ritual abuse involving elite networks, the Bohemian Grove men's club and its owl symbolism, prevalence of occult/Moloch imagery in mass media and entertainment, and historical satanic panic phenomena (1980s-1990s) that generated false abuse claims. Research reveals minimal verifiab",
+    "priority": 16,
+    "url": "pages/priority-16-satanic-ritual.html",
+    "word_count": 2355
+  },
+  {
+    "title": "Astronomical Anomalies Cross-Examination",
+    "category": "evidence",
+    "status": "complete",
+    "era": "100-2026",
+    "tags": "astronomy, almagest, eclipses, radiocarbon, cross-examination, chronology",
+    "summary": "Almagest star catalog redating (15th-16th c.), Thucydides eclipses (1033/1140 CE), Crucifixion eclipse (1185 CE), radiocarbon circular logic.",
+    "snippet": "CHRONOLOGY FABRICATION AUDIT Researcher: CORTEX Date: 2026-02-27 4. CROSS-EXAMINATION OF THE RECORD \u2014 ASTRONOMICAL & METHODOLOGICAL ANOMALIES Focus: Documenting anomalies that contradict conventional chronology. 4.1 THE ALMAGEST ANOMALY \u2014 Star Catalog Exposes Medieval Origin Fomenko's Analysis Core Finding: Ptolemy's Almagest star catalog \u2014 traditionally dated to 2nd century AD \u2014 was actually comp",
+    "priority": 3,
+    "url": "pages/priority-03-chronology-fabrication.html",
+    "word_count": 610
+  },
+  {
+    "title": "Archaeological Reality Testing",
+    "category": "evidence",
+    "status": "complete",
+    "era": "1000-2026",
+    "tags": "archaeology, jericho, radiocarbon, stratigraphy, forgery, kenyon",
+    "summary": "Archaeological evidence vs biblical chronology: Jericho excavations, radiocarbon limitations, stratigraphic contradictions, document forgery detection.",
+    "snippet": "PRIORITY #9: ARCHAEOLOGICAL REALITY TESTING & HISTORICAL DOCUMENT AUDIT FORENSIC INVESTIGATION: TESTING BIBLICAL CHRONOLOGY AGAINST ARCHAEOLOGICAL REALITY EXECUTIVE SUMMARY This priority investigates archaeological evidence, dating methods, and historical document authenticity to test biblical chronology claims against physical reality. Research reveals significant contradictions between \"ancient\"",
+    "priority": null,
+    "url": "pages/priority-09b-archaeology.html",
+    "word_count": 3609
+  }
+];
+
+// Attach card HTML
+PAGES.forEach(function(p) {
+  var pb = p.priority ? '<span class="badge-priority">#' + p.priority + '</span>' : "";
+  var sl = p.status.replace(/-/g, " ").replace(/\b\w/g, function(c) { return c.toUpperCase(); });
+  var wc = p.word_count > 1000 ? '<span class="badge-words">' + Math.floor(p.word_count/1000) + 'k words</span>' : "";
+  p._card = '<a href="' + p.url + '" class="cx-card" data-cat="' + p.category + '">'  + 
+    '<div class="cx-card-top"><span class="cx-card-title">' + p.title + '</span>' + pb + '</div>' + 
+    '<div class="cx-card-summary">' + p.summary + '</div>' + 
+    '<div class="cx-card-meta"><span class="badge-status badge-' + p.status + '">' + sl + '</span>' + 
+    '<span class="badge-cat cat-' + p.category + '">' + p.category.charAt(0).toUpperCase() + p.category.slice(1) + '</span>' + 
+    '<span class="badge-era">' + p.era + '</span>' + wc + '</div></a>';
+});
+
+  
+var currentCat = 'all';
+function renderCards(pages) {
+  var grid = document.getElementById('results-grid');
+  var count = document.getElementById('result-count');
+  if (!pages.length) { grid.innerHTML = '<div class="no-results"><i class="fas fa-search"></i> No matching pages</div>'; }
+  else { grid.innerHTML = pages.map(function(p) { return p._card; }).join(''); }
+  count.textContent = pages.length + ' / ' + PAGES.length;
+}
+function doFilter() {
+  var q = document.getElementById('search-input').value.toLowerCase().trim();
+  var terms = q ? q.split(/\s+/) : [];
+  var results = PAGES.filter(function(p) {
+    if (currentCat !== 'all' && p.category !== currentCat) return false;
+    if (!terms.length) return true;
+    var hay = (p.title + ' ' + p.summary + ' ' + p.category + ' ' + p.era + ' ' + p.tags + ' ' + p.snippet).toLowerCase();
+    return terms.every(function(t) { return hay.indexOf(t) !== -1; });
+  });
+  renderCards(results);
+}
+document.getElementById('search-input').addEventListener('input', doFilter);
+document.querySelectorAll('.cx-filter-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    currentCat = this.dataset.cat;
+    document.querySelectorAll('.cx-filter-btn').forEach(function(b) { b.classList.remove('active'); });
+    this.classList.add('active');
+    doFilter();
+  });
+});
+renderCards(PAGES);
+
+  </script>
+</body>
+</html>
