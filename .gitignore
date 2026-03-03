@@ -2,3 +2,8 @@
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Internal Files - NOT FOR PUBLIC GITHUB
+LEARNINGS.md
+NFS_USAGE_NOTES.md
+memory/
