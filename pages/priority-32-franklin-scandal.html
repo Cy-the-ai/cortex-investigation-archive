@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Franklin Scand &mdash; Cortex Investigation Archive</title>
+  <!-- Local vendor (instant render — works offline, USB, QFile, file://) -->
+  <link href="../vendor/bootstrap/bootstrap.min.css" rel="stylesheet" id="bs-local">
+  <link href="../vendor/fontawesome/css/all.min.css" rel="stylesheet" id="fa-local">
+  <link href="../css/cortex.css" rel="stylesheet">
+  <script>
+  // CDN failover: when online, upgrade to CDN and disable local copy
+  (function(){
+    function cdn(id,url){
+      var l=document.createElement('link');l.rel='stylesheet';l.href=url;
+      l.onload=function(){var v=document.getElementById(id);if(v)v.disabled=true;};
+      document.head.appendChild(l);
+    }
+    cdn('bs-local','https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css');
+    cdn('fa-local','https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+  })();
+  </script>
+</head>
+<body>
+
+  <aside class="cx-sidebar">
+    <div class="cx-sidebar-brand">
+      <a href="../index.html">
+        <span class="cx-logo">CX</span>
+        <span>Cortex Archive</span>
+      </a>
+    </div>
+    <div class="cx-sidebar-heading"><i class="fas fa-box-archive"></i> Archive</div>
+<a href="archive-master.html" class="cx-sidebar-link" title="Master Investigation Archive">Master Investigation Archive</a>
+<div class="cx-sidebar-heading"><i class="fas fa-book-open"></i> Sections</div>
+<a href="section-anatoly-fomenko-new-chronology.html" class="cx-sidebar-link" title="Anatoly Fomenko & New Chronology — Chronology Revisionism Analysis">Anatoly Fomenko & New Chronology — Chronology Revisionism Analysis</a>
+<a href="section-modern-global-lobby.html" class="cx-sidebar-link" title="Modern Global Lobby (1948-Present)">Modern Global Lobby (1948-Present)</a>
+<a href="priority-17-political-influence.html" class="cx-sidebar-link" title="Political Influence Research Briefings">Political Influence Research Briefings</a>
+<div class="cx-sidebar-heading"><i class="fas fa-crosshairs"></i> Priorities</div>
+<a href="priority-01-banking-federal-reserve.html" class="cx-sidebar-link" title="Banking & Federal Reserve">#1 Banking & Federal Reserve</a>
+<a href="priority-02-think-tank-ecosystem.html" class="cx-sidebar-link" title="Think Tank Ecosystem">#2 Think Tank Ecosystem</a>
+<a href="priority-04-campus-pressure.html" class="cx-sidebar-link" title="Campus Pressure Network">#4 Campus Pressure Network</a>
+<a href="priority-05-media-ownership.html" class="cx-sidebar-link" title="Media Ownership & Narrative Control">#5 Media Ownership & Narrative Control</a>
+<a href="priority-06-european-lobby.html" class="cx-sidebar-link" title="European Lobby Apparatus">#6 European Lobby Apparatus</a>
+<a href="priority-07-intelligence-operations.html" class="cx-sidebar-link" title="Intelligence Operations">#7 Intelligence Operations</a>
+<a href="priority-08-military-industrial.html" class="cx-sidebar-link" title="Military-Industrial Complex">#8 Military-Industrial Complex</a>
+<a href="priority-09-scientific-consensus.html" class="cx-sidebar-link" title="Scientific Consensus as Chronology Protection">#9 Scientific Consensus as Chronology Protection</a>
+<a href="priority-10-zionist-opposition.html" class="cx-sidebar-link" title="Anti-Zionist Opposition Movements">#10 Anti-Zionist Opposition Movements</a>
+<a href="priority-11-criminal-networks.html" class="cx-sidebar-link" title="High-Profile Criminal Networks">#11 High-Profile Criminal Networks</a>
+<a href="priority-12-zionist-protocols.html" class="cx-sidebar-link" title="Zionist Protocols & Governance">#12 Zionist Protocols & Governance</a>
+<a href="priority-13-henry-ford.html" class="cx-sidebar-link" title="Henry Ford International Operations">#13 Henry Ford International Operations</a>
+<a href="priority-14-epstein-network.html" class="cx-sidebar-link" title="Epstein Network & Elite Compromise Systems">#14 Epstein Network & Elite Compromise Systems</a>
+<a href="priority-15-pizzagate.html" class="cx-sidebar-link" title="Pizzagate & Pedophile Network Investigations">#15 Pizzagate & Pedophile Network Investigations</a>
+<a href="priority-16-satanic-ritual.html" class="cx-sidebar-link" title="Satanic Ritual Abuse Allegations & Elite Network Symbolism">#16 Satanic Ritual Abuse Allegations & Elite Network Symbolism</a>
+<a href="priority-18-historical-pedophile-scandals.html" class="cx-sidebar-link" title="Documented Historical Pedophile Scandals">#18 Documented Historical Pedophile Scandals</a>
+<a href="priority-19-historical-documented-cases.html" class="cx-sidebar-link" title="Historical Documented Cases — Ancient Through 1900">#19 Historical Documented Cases — Ancient Through 1900</a>
+<a href="priority-20-epstein-files-deep-dive.html" class="cx-sidebar-link" title="Epstein Files — Deep Investigation of Documented Evidence">#20 Epstein Files — Deep Investigation of Documented Evidence</a>
+<a href="priority-21-intelligence-operations.html" class="cx-sidebar-link" title="Intelligence Agency Operations & Programs">#21 Intelligence Agency Operations & Programs</a>
+<a href="priority-22-covid-pandemic.html" class="cx-sidebar-link" title="COVID-19 Pandemic">#22 COVID-19 Pandemic</a>
+<a href="priority-23-digital-surveillance.html" class="cx-sidebar-link" title="Digital Surveillance">#23 Digital Surveillance</a>
+<a href="priority-24-5g-emf.html" class="cx-sidebar-link" title="5G and Electromagnetic Fields">#24 5G and Electromagnetic Fields</a>
+<a href="priority-25-911-investigation.html" class="cx-sidebar-link" title="9/11 Investigation">#25 9/11 Investigation</a>
+<a href="priority-26-jfk-assassination.html" class="cx-sidebar-link" title="JFK Assassination">#26 JFK Assassination</a>
+<a href="priority-27-rfk-mlk-assassinations.html" class="cx-sidebar-link" title="RFK and MLK Assassinations">#27 RFK and MLK Assassinations</a>
+<a href="priority-28-mkultra-mind-control.html" class="cx-sidebar-link" title="MKULTRA and Mind Control">#28 MKULTRA and Mind Control</a>
+<a href="priority-29-cointelpro.html" class="cx-sidebar-link" title="COINTELPRO">#29 COINTELPRO</a>
+<a href="priority-30-operation-paperclip.html" class="cx-sidebar-link" title="Operation Paperclip">#30 Operation Paperclip</a>
+<a href="priority-31-vatican-bank-scandals.html" class="cx-sidebar-link" title="Vatican Bank Scandals">#31 Vatican Bank Scandals</a>
+<a href="priority-32-franklin-scandal.html" class="cx-sidebar-link active" title="Franklin Scand">#32 Franklin Scand</a>
+<a href="priority-33-haarp-weather-warfare.html" class="cx-sidebar-link" title="HAARP and Weather Warfare">#33 HAARP and Weather Warfare</a>
+<a href="priority-34-geoengineering.html" class="cx-sidebar-link" title="Geoengineering">#34 Geoengineering</a>
+<div class="cx-sidebar-heading"><i class="fas fa-flask"></i> Evidence</div>
+<a href="priority-03-chronology-fabrication.html" class="cx-sidebar-link" title="Astronomical Anomalies Cross-Examination">#3 Astronomical Anomalies Cross-Examination</a>
+<a href="priority-09b-archaeology.html" class="cx-sidebar-link" title="Archaeological Reality Testing">Archaeological Reality Testing</a>
+
+  </aside>
+
+  <div class="cx-main">
+    <div class="cx-breadcrumb">
+      <a href="../index.html"><i class="fas fa-th-large"></i> Dashboard</a>
+      <span>/</span>
+      <span>Franklin Scand</span>
+    </div>
+
+    <div class="cx-meta-bar">
+      <div>
+        <div class="cx-meta-title">Franklin Scand</div>
+      </div>
+      <div class="cx-meta-badges">
+        <span class="badge-status badge-complete"><i class="fas fa-check-circle"></i> Complete</span> <span class="badge-cat cat-priority">Priority</span> <span class="badge-era"><i class="fas fa-clock"></i> 1988-1990s</span>
+      </div>
+    </div>
+
+    <div class="cx-toc">
+<div class="cx-toc-title"><i class="fas fa-list"></i> Table of Contents</div>
+<a href="#franklin-scandal" class="">FRANKLIN SCANDAL</a>
+<a href="#overview" class=" depth-2">Overview</a>
+<a href="#1-initial-allegations-and-investigation" class=" depth-2">1. Initial Allegations and Investigation</a>
+<a href="#1988-emergence" class=" depth-3">1988 Emergence</a>
+<a href="#child-abuse-allegations" class=" depth-3">Child Abuse Allegations</a>
+<a href="#2-lawrence-king-and-network" class=" depth-2">2. Lawrence King and Network</a>
+<a href="#background" class=" depth-3">Background</a>
+<a href="#network-structure" class=" depth-3">Network Structure</a>
+<a href="#3-grand-jury-investigations" class=" depth-2">3. Grand Jury Investigations</a>
+<a href="#douglas-county-grand-jury-1989-1990" class=" depth-3">Douglas County Grand Jury (1989-1990)</a>
+<a href="#state-grand-jury-1990" class=" depth-3">State Grand Jury (1990)</a>
+<a href="#4-key-witnesses-and-victims" class=" depth-2">4. Key Witnesses and Victims</a>
+<a href="#paul-bonacci" class=" depth-3">Paul Bonacci</a>
+<a href="#troy-boner" class=" depth-3">Troy Boner</a>
+<a href="#other-victims" class=" depth-3">Other Victims</a>
+<a href="#5-federal-investigations-and-dismissals" class=" depth-2">5. Federal Investigations and Dismissals</a>
+<a href="#fbi-investigation" class=" depth-3">FBI Investigation</a>
+<a href="#us-attorney-general" class=" depth-3">U.S. Attorney General</a>
+<a href="#6-media-manipulation-and-suppression" class=" depth-2">6. Media Manipulation and Suppression</a>
+<a href="#early-coverage-1988-1990" class=" depth-3">Early Coverage (1988-1990)</a>
+<a href="#troy-boners-role" class=" depth-3">Troy Boner's Role</a>
+<a href="#7-lawrence-kings-death" class=" depth-2">7. Lawrence King's Death</a>
+<a href="#1990-death" class=" depth-3">1990 Death</a>
+<a href="#8-chronology-aware-analysis" class=" depth-2">8. Chronology-Aware Analysis</a>
+<a href="#the-redating-question" class=" depth-3">The Redating Question</a>
+<a href="#pattern-recognition" class=" depth-3">Pattern Recognition</a>
+<a href="#9-key-findings" class=" depth-2">9. Key Findings</a>
+<a href="#conclusion" class=" depth-2">Conclusion</a>
+</div>
+
+    <div class="cx-content">
+      <h1 id="franklin-scandal">FRANKLIN SCANDAL</h1>
+<h2 id="overview">Overview</h2>
+<p>The Franklin Credit Union scandal emerged in 1988 when allegations of child prostitution ring involving prominent Nebraska politicians and businessmen surfaced. Lawrence King, owner of Franklin Credit Union, was accused of operating pedophile network using children from Boys Town shelter. Grand juries heard testimony from multiple child victims alleging abuse by political figures, but federal investigations dismissed claims. The case represents potential elite child abuse network protected by institutional power and systematic suppression of victim testimony.</p>
+<p><strong>Key Finding:</strong> Multiple grand juries received credible testimony from child victims alleging abuse by political figures, business leaders, and law enforcement. However, federal investigations consistently dismissed allegations, suggesting systematic suppression to protect powerful figures. The case demonstrates how institutional power can protect perpetrators while discrediting victims.</p>
+<hr>
+<h2 id="1-initial-allegations-and-investigation">1. Initial Allegations and Investigation</h2>
+<h3 id="1988-emergence">1988 Emergence</h3>
+<p><strong>Franklin Credit Union:</strong></p>
+<ul><li>Lawrence King: Founder and owner</li><li>Major Nebraska financial institution</li><li>Community leader with political connections</li></ul>
+<p><strong>Initial Charges:</strong></p>
+<ul><li>Financial fraud and embezzlement</li><li>King accused of $38 million in misappropriated funds</li><li>Investigation revealed broader allegations</li></ul>
+<h3 id="child-abuse-allegations">Child Abuse Allegations</h3>
+<p><strong>Boys Town Connection:</strong></p>
+<ul><li>Children from Boys Town shelter alleged abuse</li><li>Claims of prostitution ring operated by King</li><li>Victims transported to parties and events</li><li>Abuse by prominent figures alleged</li></ul>
+<p><strong>Political Connections:</strong></p>
+<ul><li>Nebraska politicians named</li><li>Business leaders</li><li>Federal figures implicated</li><li>Law enforcement involvement alleged</li></ul>
+<hr>
+<h2 id="2-lawrence-king-and-network">2. Lawrence King and Network</h2>
+<h3 id="background">Background</h3>
+<p><strong>Lawrence King:</strong></p>
+<ul><li>Omaha businessman</li><li>Founded Franklin Credit Union</li><li>Political fundraiser and donor</li><li>Well-connected in Nebraska politics</li></ul>
+<p><strong>Alleged Activities:</strong></p>
+<ul><li>Operated child prostitution ring</li><li>Used children from Boys Town</li><li>Hosted parties for political and business elites</li><li>Blackmail material collected</li></ul>
+<h3 id="network-structure">Network Structure</h3>
+<p><strong>Alleged Participants:</strong></p>
+<ul><li>Nebraska politicians</li><li>Business leaders</li><li>Federal officials</li><li>Law enforcement officers</li></ul>
+<p><strong>Operations:</strong></p>
+<ul><li>Children from Boys Town and other sources</li><li>Prostitution and abuse at parties and events</li><li>Photographic blackmail material</li><li>Financial benefits for cooperation</li></ul>
+<hr>
+<h2 id="3-grand-jury-investigations">3. Grand Jury Investigations</h2>
+<h3 id="douglas-county-grand-jury-1989-1990">Douglas County Grand Jury (1989-1990)</h3>
+<p><strong>Witness Testimony:</strong></p>
+<ul><li>Multiple child victims testified</li><li>Detailed abuse by prominent figures</li><li>Named specific politicians and businessmen</li><li>Described organized abuse operations</li></ul>
+<p><strong>Findings:</strong></p>
+<ul><li>Indicted Lawrence King</li><li>Dismissed allegations against political figures</li><li>Found insufficient evidence for broader conspiracy</li></ul>
+<h3 id="state-grand-jury-1990">State Grand Jury (1990)</h3>
+<p><strong>Additional Testimony:</strong></p>
+<ul><li>More victims came forward</li><li>Consistent allegations against similar figures</li><li>Claims of systematic abuse network</li></ul>
+<p><strong>Outcome:</strong></p>
+<ul><li>Limited indictments</li><li>Political figures largely protected</li><li>King convicted on financial charges</li></ul>
+<hr>
+<h2 id="4-key-witnesses-and-victims">4. Key Witnesses and Victims</h2>
+<h3 id="paul-bonacci">Paul Bonacci</h3>
+<p><strong>Testimony:</strong></p>
+<ul><li>Child victim from age 12</li><li>Transported to multiple states for abuse</li><li>Named political figures and celebrities</li><li>Described filming and blackmail operations</li></ul>
+<p><strong>Allegations:</strong></p>
+<ul><li>Abuse by multiple prominent individuals</li><li>Transportation to Washington D.C. for political prostitution</li><li>Witnessed child abuse at political events</li></ul>
+<h3 id="troy-boner">Troy Boner</h3>
+<p><strong>Media Figure:</strong></p>
+<ul><li>Omaha-based television host</li><li>Covered Franklin scandal early</li><li>Received awards for investigative reporting</li></ul>
+<p><strong>Later Retraction:</strong></p>
+<ul><li>Changed position on scandal</li><li>Alleged pressured by powerful figures</li><li>Discredited earlier allegations</li></ul>
+<h3 id="other-victims">Other Victims</h3>
+<p><strong>Consistent Patterns:</strong></p>
+<ul><li>Multiple children from Boys Town</li><li>Similar allegations against political figures</li><li>Systematic abuse at parties and events</li><li>Blackmail and intimidation</li></ul>
+<hr>
+<h2 id="5-federal-investigations-and-dismissals">5. Federal Investigations and Dismissals</h2>
+<h3 id="fbi-investigation">FBI Investigation</h3>
+<p><strong>1988-1991:</strong> FBI conducted investigation<br><strong>Findings:</strong></p>
+<ul><li>Dismissed conspiracy allegations</li><li>Found insufficient evidence</li><li>Blamed media sensationalism</li><li>Protected political figures</li></ul>
+<p><strong>Criticism:</strong></p>
+<ul><li>Limited investigation of political connections</li><li>Focus on discrediting witnesses</li><li>Failure to investigate grand jury testimony</li></ul>
+<h3 id="us-attorney-general">U.S. Attorney General</h3>
+<p><strong>1990:</strong> Federal case dismissed<br><strong>Findings:</strong></p>
+<ul><li>No federal crimes found</li><li>State case sufficient</li><li>Protected federal figures from investigation</li></ul>
+<p><strong>Chronology Note:</strong> Federal dismissals prevented investigation of political figures named in grand jury testimony.</p>
+<hr>
+<h2 id="6-media-manipulation-and-suppression">6. Media Manipulation and Suppression</h2>
+<h3 id="early-coverage-1988-1990">Early Coverage (1988-1990)</h3>
+<p><strong>Initial Reports:</strong></p>
+<ul><li>Local Omaha media covered allegations</li><li>National media picked up story</li><li>Focus on King's financial crimes</li></ul>
+<p><strong>Shift in Coverage:</strong></p>
+<ul><li>Gradual discreditation of victims</li><li>Emphasis on conspiracy theories</li><li>Minimal coverage of grand jury testimony</li></ul>
+<h3 id="troy-boners-role">Troy Boner's Role</h3>
+<p><strong>Initial Reporting:</strong></p>
+<ul><li>Covered allegations extensively</li><li>Interviewed victims</li><li>Reported political connections</li></ul>
+<p><strong>Later Changes:</strong></p>
+<ul><li>Retracted earlier allegations</li><li>Changed narrative</li><li>Alleged intimidation by powerful figures</li></ul>
+<p><strong>Washington Post Influence:</strong></p>
+<ul><li>National media dismissals</li><li>Labeling as conspiracy theory</li><li>Discrediting victim testimony</li></ul>
+<hr>
+<h2 id="7-lawrence-kings-death">7. Lawrence King's Death</h2>
+<h3 id="1990-death">1990 Death</h3>
+<p><strong>Circumstances:</strong></p>
+<ul><li>King found dead at prison office</li><li>Ruled suicide</li><li>Occurred during ongoing investigations</li></ul>
+<p><strong>Allegations:</strong></p>
+<ul><li>Potential murder to prevent testimony</li><li>Coverup of broader network</li><li>Connection to powerful protectors</li></ul>
+<p><strong>Chronology Note:</strong> King's death prevented further testimony about alleged child prostitution network involving political figures.</p>
+<hr>
+<h2 id="8-chronology-aware-analysis">8. Chronology-Aware Analysis</h2>
+<h3 id="the-redating-question">The Redating Question</h3>
+<p>Chronology-aware analysis raises questions:</p>
+<ol><li><strong>1988 Emergence:</strong> Scandal emerged during period of other high-level child abuse investigations, suggesting broader pattern of elite abuse networks.</li></ol>
+<ol><li><strong>Grand Jury Consistency:</strong> Multiple grand juries received consistent testimony from child victims alleging abuse by similar political figures.</li></ol>
+<ol><li><strong>Federal Dismissals:</strong> FBI and federal investigations systematically dismissed allegations protecting political figures named in grand jury testimony.</li></ol>
+<ol><li><strong>Media Shift:</strong> Early coverage of allegations gave way to discreditation campaigns, suggesting organized effort to suppress story.</li></ol>
+<ol><li><strong>King's Death Timing:</strong> Lawrence King died during investigations, preventing further testimony about broader network.</li></ol>
+<h3 id="pattern-recognition">Pattern Recognition</h3>
+<p><strong>Protection of Political Elites:</strong></p>
+<ul><li>Grand jury testimony dismissed</li><li>Federal investigations protecting political figures</li><li>Media discrediting victims</li></ul>
+<p><strong>Institutional Power:</strong></p>
+<ul><li>Political connections preventing investigation</li><li>Law enforcement involvement</li><li>Financial influence on media</li></ul>
+<p><strong>Chronology of Suppression:</strong></p>
+<ul><li><strong>1988:</strong> Allegations surface</li><li><strong>1989-1990:</strong> Grand juries hear testimony</li><li><strong>1990:</strong> Federal dismissals, media shifts</li><li><strong>1990s:</strong> Continued suppression and discreditation</li></ul>
+<p><strong>Implication:</strong> Franklin scandal represents systematic suppression of child abuse allegations to protect political and business elites. Multiple grand juries receiving consistent victim testimony that was dismissed suggests institutional coverup rather than lack of evidence.</p>
+<hr>
+<h2 id="9-key-findings">9. Key Findings</h2>
+<ol><li><strong>Grand Jury Testimony:</strong> Multiple grand juries received credible testimony from child victims alleging abuse by Nebraska political figures and business leaders.</li></ol>
+<ol><li><strong>Paul Bonacci Witness:</strong> Detailed testimony about transportation to multiple states for abuse of political figures and celebrities.</li></ol>
+<ol><li><strong>Federal Protection:</strong> FBI and federal investigations consistently dismissed allegations to protect political figures named in grand jury testimony.</li></ol>
+<ol><li><strong>Media Discreditation:</strong> Coverage shifted from initial allegations to discreditation campaigns, suggesting organized suppression.</li></ol>
+<ol><li><strong>Lawrence King's Death:</strong> King died during investigations, preventing further testimony about broader network.</li></ol>
+<ol><li><strong>Boys Town Connection:</strong> Systematic allegations of child abuse from Boys Town by political and business elites.</li></ol>
+<ol><li><strong>Network Structure:</strong> Alleged child prostitution ring involving multiple states, political figures, and blackmail material.</li></ol>
+<ol><li><strong>Systematic Suppression:</strong> Multiple grand juries received consistent testimony that was systematically dismissed, suggesting institutional coverup.</li></ol>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>The Franklin Credit Union scandal represents potential systematic child abuse network involving Nebraska political figures, business leaders, and law enforcement protected by institutional power. Multiple grand juries received credible testimony from child victims—particularly Paul Bonacci—describing organized abuse operations, blackmail material, and connections to prominent figures.</p>
+<p>However, federal investigations consistently dismissed allegations to protect political elites. FBI investigations focused on discrediting witnesses rather than investigating grand jury testimony. Media coverage shifted from initial reporting of allegations to systematic discreditation campaigns, with figures like Troy Boner changing positions under alleged pressure.</p>
+<p>Lawrence King's death during investigations prevented further testimony about broader network. The systematic suppression of grand jury testimony across multiple juries suggests institutional coverup rather than lack of evidence. Political connections, law enforcement involvement, and financial influence created protection mechanisms for perpetrators.</p>
+<p>The chronology of suppression—from 1988 emergence through 1989-1990 grand jury testimony to federal dismissals—reveals pattern of protecting elites at expense of child victims. The consistent victim testimony across multiple grand juries indicates credibility that was systematically dismissed to protect powerful figures.</p>
+<p>Franklin scandal demonstrates how institutional power can protect perpetrators of child abuse while discrediting and intimidating victims. The systematic nature of suppression—grand jury testimony ignored, federal investigations protecting political figures, media discreditation campaigns—suggests coordinated effort to prevent accountability.</p>
+<p>The case represents cautionary tale about how powerful institutions can protect elites through suppression of evidence, discreditation of witnesses, and institutional barriers to investigation. Despite multiple grand juries hearing consistent testimony about political figures' involvement, federal investigations ensured no accountability occurred.</p>
+<p>Understanding Franklin scandal is essential for recognizing patterns of institutional protection of child abusers in positions of power. The systematic suppression of credible victim testimony demonstrates how democratic mechanisms can fail when institutional interests align to protect perpetrators.</p>
+<p>The ongoing silence about Franklin scandal and absence of investigation into political figures named in grand jury testimony represents continued suppression preventing justice for victims. The case illustrates how child abuse networks can operate with protection from institutional power when victims lack resources to overcome suppression.</p>
+    </div>
+
+    <footer class="cx-footer">
+      <p>Cortex Investigation Archive &mdash; Generated 2026-03-04 18:14</p>
+    </footer>
+  </div>
+
+  <a href="#" class="cx-back-top" title="Back to top"><i class="fas fa-chevron-up"></i></a>
+</body>
+</html>
